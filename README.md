@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+mkdir testapp
+cd testapp
+bundle init
+nvim Gemfile
+bundle install --path vendor/bundle
 
-Things you may want to cover:
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/takkjoga/testapp.git
+git push -u origin master
 
-* Ruby version
+bundle exec rails new . -T --skip-jbuilder -d mysql
+echo “/vendor/bundle” >> .gitignore
+vi config/database.yml
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bundle exec rails db:create
+```
